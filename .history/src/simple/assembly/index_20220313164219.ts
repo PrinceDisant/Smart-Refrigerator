@@ -54,9 +54,9 @@ function removeItems(itemToRemove: number, amountToRemove: number): string {
 
 // A function to place an order for groceries
 export function placeOrder(itemToBuy: number, amountToBuy: number): string {
-  let itemsBought = new PersistentVector<number>("itemsBought");
+  let itemsBought = new PersistentVector<string>("itemsBought");
   addItems(itemToBuy, amountToBuy);
-  itemsBought.push(itemToBuy);
+  itemsBought.push(getItem(itemToBuy));
   return `✅ Order placed.`;
 }
 
